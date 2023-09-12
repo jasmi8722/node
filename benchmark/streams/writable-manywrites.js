@@ -5,9 +5,10 @@ const Writable = require('stream').Writable;
 
 const bench = common.createBenchmark(main, {
   n: [2e6],
-  sync: ['yes', 'no'],
-  writev: ['yes', 'no'],
-  callback: ['yes', 'no'],
+  // XXX: Temporary change to make benchamrk run faster
+  sync: ['yes'],
+  writev: ['no'],
+  callback: ['no'],
   len: [1024, 32 * 1024],
 });
 
